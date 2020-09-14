@@ -37,7 +37,6 @@ const Navbar = ({logout,getuser,authUser}) => {
     <div>
             {userData ? (
               <>
-              {console.log(authUser)}
                <span className="rounded-full py-2 px-4 bg-red-700"> {userData.email}</span>
             <button onClick={logout}  className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white
              hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"><i className="fas fa-sign-out-alt"></i></button>
