@@ -1,12 +1,19 @@
 import React from 'react'
 import PokemonsList from '../pokemon/PokemonsList'
+import { connect } from 'react-redux'
+import {Redirect} from 'react-router-dom'
 
-const Home = () => {
+const Home = ({authUser}) => {
     return (
         <div>
-            <PokemonsList />
+
+            {!authUser.token ? (<Redirect to='/l' />) : (<PokemonsList />)}
         </div>
     )
 }
-
-export default Home
+const mapStateToProps = (state) => {
+    return {
+      authUser: state.auth,
+    }
+  }
+export default connect(mapStateToProps)(Home)
